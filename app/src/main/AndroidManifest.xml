@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://android.com"
+    xmlns:android2="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.example.campsitecommander"
+    tools:ignore="NamespaceTypo">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="Campsite Commander"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.AppCompat.NoActionBar">
+
+        <!-- 1. SPLASH SCREEN: Starts first because of the LAUNCHER filter -->
+        <activity
+            android:name=".SplashActivity"
+            android:exported="true"
+            android2:exported="true"
+            android2:name=".SplashActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- 2. MAIN HUB SCREEN: Normal registration with NO launcher filter inside -->
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"
+            android2:name=".SplashActivity"
+            tools:ignore="DuplicateActivity" />
+
+        <!-- 3. DETAILED VIEW SCREEN: Normal registration -->
+        <activity
+            android:name=".DetailedViewActivity"
+            android:exported="true"
+            android2:name=".SplashActivity"
+            tools:ignore="DuplicateActivity" />
+
+    </application>
+
+</manifest>
